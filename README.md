@@ -1,7 +1,7 @@
 ## Dummyjson Data Grouping
 
-Transform User Data from Dummyjson into Departments
-API from https://dummyjson.com/users
+- Transform User Data from Dummyjson into Departments
+- API from https://dummyjson.com/users
 
 Tech: TypeScript & Express
 
