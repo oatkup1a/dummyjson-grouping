@@ -2,10 +2,9 @@
 
 - Transform User Data from Dummyjson into Departments
 - API from https://dummyjson.com/users
+- Tech: TypeScript, Express, Jest, Axios
 
-Tech: TypeScript, Express, Jest, Axios
-
-Response:
+Sample Response:
 
 ```json
     {
