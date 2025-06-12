@@ -81,7 +81,7 @@
   document.getElementById('fetchUsers').addEventListener('click', async () => {
     responseBox.textContent = 'Loading...';
     try {
-      const res = await fetch('/api/users');
+      const res = await fetch('https://dummyjson-grouping.onrender.com/api/users');;
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       responseBox.textContent = JSON.stringify(data, null, 2);

@@ -3,7 +3,12 @@ import path from "path";
 import userRoutes from "./routes/user";
 
 const app = express();
+const cors = require('cors');
 const PORT = 3000;
+
+app.use(cors({
+  origin: 'https://oatkup1a.github.io'
+}));
 
 app.use(express.static(path.join(__dirname, "..", "public")));
 
