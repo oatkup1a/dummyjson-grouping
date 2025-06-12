@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DummyJSON Grouping</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    code {
+      background-color: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    section {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DummyJSON Grouping</h1>
+    <p>A backend project for grouping and filtering data from DummyJSON</p>
+    <p>
+      🔗 <a href="https://github.com/oatkup1a/dummyjson-grouping" target="_blank">
+        View on GitHub
+      </a>
+    </p>
+  </header>
+
+<section>
+  <h2>🧪 Test the User API</h2>
+  <p>
+    Click the button below to call <code>GET /api/users</code>. This API returns a list of users
+    from DummyJSON with grouping/filtering logic (if implemented).
+  </p>
+
+  <button id="fetchUsers">Fetch Users</button>
+  <button id="clearResponse" style="margin-left: 0.5em;">Clear</button>
+
+  <h3>📦 Live Response</h3>
+  <pre id="apiResponse" style="background:#f0f0f0; padding:1em; border-radius:8px;"></pre>
+
+  <h3>📄 Sample Response</h3>
+  <pre id="sampleResponse" style="background:#f0f0f0; padding:1em; border-radius:8px;">
+[
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "email": "leanne@example.com"
+  },
+  {
+    "id": 2,
+    "name": "Ervin Howell",
+    "email": "ervin@example.com"
+  }
+]
+  </pre>
+</section>
+
+<script>
+  const responseBox = document.getElementById('apiResponse');
+
+  document.getElementById('fetchUsers').addEventListener('click', async () => {
+    responseBox.textContent = 'Loading...';
+    try {
+      const res = await fetch('/api/users');
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      responseBox.textContent = JSON.stringify(data, null, 2);
+    } catch (err) {
+      responseBox.textContent = 'Error: ' + err.message;
+    }
+  });
+
+  document.getElementById('clearResponse').addEventListener('click', () => {
+    responseBox.textContent = '';
+  });
+</script>
+
+</body>
+</html>
