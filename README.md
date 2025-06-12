@@ -1,5 +1,5 @@
 ## Dummyjson Data Grouping
-
+- Check out at https://oatkup1a.github.io/dummyjson-grouping/
 - Transform User Data from Dummyjson into Departments
 - API from https://dummyjson.com/users
 - Tech: TypeScript, Express, Jest, Axios
