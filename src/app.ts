@@ -1,9 +1,9 @@
 import express from "express";
 import path from "path";
 import userRoutes from "./routes/user";
+import cors from 'cors';
 
 const app = express();
-const cors = require('cors');
 const PORT = 3000;
 
 app.use(cors({
